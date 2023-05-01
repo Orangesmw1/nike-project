@@ -1,0 +1,50 @@
+.essentials-shop .title {
+    font-size: 1.6rem;
+    padding: 40px 0;
+}
+
+
+.essentials-shop .box-img-store {
+    display: flex;
+    height: 580px;
+}
+
+
+.essentials-shop .women,.essentials-shop .men, .essentials-shop .kid {
+    width: 100%;
+    height: 100%;
+   
+    background-image: url(../../../assist/image/esstantials2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+
+
+}
+
+.essentials-shop .btn-get-shop {
+    position: absolute;
+    bottom: 8%;
+    left: 12%;
+
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-weight: 400;
+    font-size: 1.1rem;
+    background-color: white;
+}
+
+.essentials-shop .women {
+    margin: 0 15px;
+}
+
+.essentials-shop .men {
+    background-image: url(../../../assist/image/esstantials.jpg);
+}
+
+.essentials-shop .kid {
+    background-image: url(../../../assist/image/esstantials3.jpg);
+    
+}
+

@@ -1,0 +1,138 @@
+.box-tag {
+    display: flex;
+    justify-content: center;
+
+    padding: 70px 0;
+}
+
+.tag-item {
+    padding: 0 50px;
+
+}
+
+.title-tag h4 {
+    font-size: 1.1rem;
+    padding-bottom: 20px;
+    color: black;
+}
+
+.tag-item li {
+    color: grey;
+    padding-bottom: 10px;
+}
+
+.footer {
+    background-color: black;
+    height: 300px;
+    color: white;
+
+    padding-top: 40px;
+}
+
+.box-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-left {
+    width: 40%;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 0.9rem;
+}
+
+.find-store {
+    font-weight: 600;
+}
+
+.find-store li {
+    padding-bottom: 10px;
+
+}
+
+.get-help li {
+    font-size: 0.8rem;
+    padding-bottom: 10px;
+    color: gray;
+
+
+}
+
+.title-get-help {
+    font-weight: bold;
+    font-size: 0.9rem !important;
+    color: white !important;
+
+}
+
+.about-nike li {
+    font-size: 0.8rem;
+    padding-bottom: 10px;
+    color: gray;
+
+}
+
+.title-about-nike {
+    font-weight: bold;
+    font-size: 0.9rem !important;
+    color: white !important;
+
+}
+
+
+
+
+.content-right ul li  {
+    display: inline-block;
+
+    width: 30px;
+    height: 30px;
+
+    text-align: center;
+    padding-top: 3px;
+    margin-left: 20px;
+
+    background-color: gray;
+    color: black;
+    border-radius: 50%;
+
+}
+
+
+.box-bottom {
+    display: flex;
+    justify-content: space-between;
+
+    color: gray;
+    padding-top: 30px;
+}
+
+.location {
+    display: flex;
+    justify-content: space-between;
+
+    width: 24%;
+    font-size: 0.8rem;
+
+    color: white !important;
+}
+
+.location .fa-map-marker-alt {
+    padding-right: 10px;
+}
+
+.location p {
+    color: gray !important;
+}
+
+.privacy ul li {
+    display: inline-block;
+
+    padding-left: 20px;
+    font-size: 0.8rem;
+}
+
+
+

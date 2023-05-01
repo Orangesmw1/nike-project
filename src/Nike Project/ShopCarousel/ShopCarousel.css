@@ -1,0 +1,21 @@
+.shop-carousel {
+    text-align: center;
+    background-color: #f5f5f5;
+    height: 55px;
+    padding: 2px 0;
+}
+
+.title-shop {
+    padding-top: 3px;
+    font-size: 1rem;
+}
+
+.shop-carousel .link-shop {
+    font-size: 0.8rem;
+    text-decoration: underline;
+    padding-bottom: 4px;
+}
+
+.shop-carousel .link-shop:hover {
+    cursor: pointer;
+}

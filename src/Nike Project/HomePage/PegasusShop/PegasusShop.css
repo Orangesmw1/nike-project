@@ -1,0 +1,47 @@
+.pegasus-shop .title {
+    font-size: 1.6rem;
+    padding: 40px 0;
+}
+
+
+.pegasus-shop .box-img-store {
+    display: flex;
+    height: 580px;
+}
+
+
+.pegasus-shop .women,.pegasus-shop .men, .pegasus-shop .kid {
+    width: 100%;
+    height: 100%;
+   
+    background-image: url(../../../assist/image/img-pegasus-shop-1.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    position: relative;
+
+
+}
+
+.pegasus-shop .btn-get-shop {
+    position: absolute;
+    bottom: 8%;
+    left: 12%;
+
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-weight: 400;
+    font-size: 1.1rem;
+    background-color: white;
+}
+
+.pegasus-shop .men {
+    background-image: url(../../../assist/image/img-pegasus-shop-2.jpg);
+    margin: 0 15px;
+}
+
+.pegasus-shop .kid {
+    background-image: url(../../../assist/image/img-pegasus-shop-3.jpg);
+    
+}
+
