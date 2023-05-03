@@ -1,8 +1,11 @@
 import React from "react";
 import logo from "../../assist/image/logo.png";
 import "./Header.css";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const listCart = useSelector((state) => state.counter.listShowCart);
+
   return (
     <div className="header flex items-center justify-between container">
       <div className="logo">

@@ -1,0 +1,169 @@
+
+.box-detail .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-img {
+    width: 70%;
+    height: 550px;
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 50px;
+    background: #e7e5e5;
+    border-radius: 20px;
+}
+
+.box-img img {
+    object-fit: cover;
+}
+
+.box-related {
+    width: 20%;
+    margin-right: 20px ;
+}
+
+.box-related li {
+    background-color:#f5f5f5c6;
+    border-radius: 20px;
+    margin: 20px 0;
+
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.box-related img {
+    width: 80%;
+}
+
+
+
+.box-options {
+    width: 25%;
+    margin-top: 40px;
+}
+
+.box-options .title-sub {
+    color: #FF5000;
+    font-weight: bold;
+}
+
+.box-options h4 {
+    font-size: 1.3rem;
+    font-weight: 600
+}
+
+.box-options .short-description {
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding-top: 5px;
+}
+
+.box-options .price {
+    font-weight: 600;
+    font-size: 1.5rem;
+
+    padding: 10px 0 50px;
+}
+
+.box-size .size-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.size-title p:last-child {
+    color: gray;
+}
+
+
+.options-size {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 5px;
+
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+
+.size-grid-item {
+    text-align: center;
+    padding: 10px 0;
+    border: 2px solid grey;
+    border-radius: 8px;
+}
+
+.size-grid-item:hover {
+    cursor: pointer;
+    border:2px solid  black;
+}
+
+.add-cart {
+    display: block;
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+    border-radius: 50px;
+
+    font-weight: bold;
+}
+
+.add-cart:hover {
+    background-color: grey;
+}
+
+.add-favourite {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    
+    border-radius: 50px;
+    border: 1px solid gray;
+    padding: 20px 0;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.add-favourite:hover {
+    border-color: black;
+    cursor: pointer;
+}
+
+.box-options .description {
+    font-weight: 600;
+
+    margin: 20px 0;
+}
+
+.view-product-detail {
+    font-weight: 600;
+    font-size: 1.1rem;
+
+    text-decoration: underline;
+    padding-bottom: 30px;
+
+    border-bottom: 1px solid gainsboro ;
+}
+
+.box-delivery, .box-how-this ,.box-review {
+    padding: 20px 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+
+    border-bottom: 1px solid gainsboro ;
+    
+}
+
+.box-review  {
+    margin-bottom: 40px;
+}

@@ -4,9 +4,10 @@ import "./ShowItem.css";
 import BoxItem from "./BoxItem";
 import BoxItem2 from "./BoxItem2";
 import BoxItem3 from "./BoxItem3";
+import { useSelector } from "react-redux";
 
-const ShowItems = (props) => {
-  const { listShoesProduct } = props;
+const ShowItems = () => {
+  const listProduct = useSelector((state) => state.counter.listProduct);
 
   return (
     <div className="show-item">
@@ -18,9 +19,9 @@ const ShowItems = (props) => {
 
         <div className="box-show-items">
           <Carousel autoplay>
-            <BoxItem listShoesProduct={listShoesProduct} />
-            <BoxItem2 listShoesProduct={listShoesProduct} />
-            <BoxItem3 listShoesProduct={listShoesProduct} />
+            <BoxItem listProduct={listProduct} />
+            <BoxItem2 listProduct={listProduct} />
+            <BoxItem3 listProduct={listProduct} />
           </Carousel>
         </div>
       </div>

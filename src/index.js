@@ -5,6 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+import  store  from './Nike Project/Redux/store'
+import { Provider } from 'react-redux'
+
 
 
 
@@ -13,9 +16,15 @@ root.render(
 
   
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+
+     <Provider store={store}>
+     <BrowserRouter>
+     
+     <App />
+     </BrowserRouter>
+
+      </Provider>
+    
   </React.StrictMode>
 
 
