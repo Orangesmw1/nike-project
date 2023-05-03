@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../../assist/image/logo.png";
 import "./Header.css";
 import { useSelector } from "react-redux";
+import PopoverCart from "./PopoverCart/PopoverCart";
 
 const Header = () => {
   const listCart = useSelector((state) => state.counter.listShowCart);
@@ -34,9 +35,7 @@ const Header = () => {
         <div className="favorite">
           <i className=" fa fa-heart"></i>
         </div>
-        <div className="cart">
-          <i className="fa fa-shopping-cart"></i>
-        </div>
+        <PopoverCart />
       </div>
     </div>
   );

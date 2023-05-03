@@ -1,0 +1,77 @@
+.popover-content {
+    width: 350px;
+}
+
+.popover-content .box-content .box-img-popover {
+    width: 30%;
+    background-color: rgba(236, 235, 235, 0.59);
+    border-radius: 20px;
+}
+
+.box-img-popover img {
+    height: 100px;
+    width: 100% !important;
+}
+
+.popover-content .box-content {
+    display: flex;
+
+    padding: 10px 0;
+
+}
+
+.popover-content .box-content ul {
+    width: 60%;
+    margin-left: 50px;
+}
+
+.popover-content .box-content ul li {
+    padding-bottom: 5px;
+    font-size: 1rem;
+
+    color: grey;
+}
+
+.popover-content .box-content ul li:first-child {
+    font-size: 1.1rem;
+    font-weight: 600;
+    
+    color: black !important;
+}
+
+.popover-content .box-content ul li:last-child {
+    font-size: 1rem;
+    font-weight: 600;
+    
+}
+
+.box-viewbag-checkout {
+    display: flex;
+    justify-content: space-between;
+}
+
+.view-bag, .check-out {
+    width: 48%;
+    background-color: black;
+    color: white;
+
+    padding: 20px 0;
+    border-radius: 50px;
+
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.view-bag {
+    background-color: transparent;
+    border: 1px solid gray;
+    color: black;
+}
+
+.view-bag:hover {
+    border-color: black;
+}
+
+.check-out:hover {
+    background-color: grey;
+}

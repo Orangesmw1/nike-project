@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 
 const BoxItem3 = (props) => {
   const { listProduct } = props;
-  const dispatch = useDispatch();
 
   const handleSetItem = () => {
     const listShow = [];
@@ -26,7 +25,6 @@ const BoxItem3 = (props) => {
                     className="img-item"
                     alt=""
                     onClick={() => {
-                      dispatch(upArrShowCart(item));
                       document.body.scrollTop = 0;
                       document.documentElement.scrollTop = 0;
                     }}
