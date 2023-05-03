@@ -13,6 +13,11 @@ const Detail = () => {
 
   const [itemDetail, setItemDetail] = useState(null);
 
+  const handleAddSize = (item, sizeItem) => {
+    const itemDetailUpdate = { ...item, sizeDetail: sizeItem };
+    setItemDetail(itemDetailUpdate);
+  };
+
   useEffect(() => {
     axios({
       method: "get",
@@ -28,6 +33,8 @@ const Detail = () => {
         <div className="box-detail" key={itemDetail.id}>
           <div className="container">
             <div className="box-img">
+              <img className="img-main" src={itemDetail.image} alt="" />
+
               <ul className="box-related">
                 {itemDetail?.relatedProducts.map((item) => {
                   return (
@@ -39,7 +46,6 @@ const Detail = () => {
                   );
                 })}
               </ul>
-              <img src={itemDetail.image} alt="" />
             </div>
 
             <div className="box-options">
@@ -58,9 +64,13 @@ const Detail = () => {
                 <div className="options-size">
                   {itemDetail.size.map((sizeItem, index) => {
                     return (
-                      <div key={index} className="size-grid-item">
+                      <button
+                        key={index}
+                        className="size-grid-item"
+                        onClick={() => handleAddSize(itemDetail, sizeItem)}
+                      >
                         EU {sizeItem}
-                      </div>
+                      </button>
                     );
                   })}
                 </div>

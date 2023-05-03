@@ -3,6 +3,7 @@ import logo from "../../assist/image/logo.png";
 import "./Header.css";
 import { useSelector } from "react-redux";
 import PopoverCart from "./PopoverCart/PopoverCart";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const listCart = useSelector((state) => state.counter.listShowCart);
@@ -10,7 +11,9 @@ const Header = () => {
   return (
     <div className="header flex items-center justify-between container">
       <div className="logo">
-        <img src={logo} alt="" />
+        <NavLink to={`/`}>
+          <img src={logo} alt="" />
+        </NavLink>
       </div>
 
       <nav className="nav-header">

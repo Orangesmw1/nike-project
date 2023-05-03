@@ -3,6 +3,7 @@ import "./App.css";
 import NikeProject from "./Nike Project/NikeProject";
 import HomePage from "./Nike Project/HomePage/HomePage";
 import Detail from "./Nike Project/Detail/Detail";
+import Bag from "./Nike Project/Bag/Bag";
 
 function App() {
   return (
@@ -23,6 +24,15 @@ function App() {
             element={
               <NikeProject>
                 <Detail />
+              </NikeProject>
+            }
+          />
+
+          <Route
+            path="/bag"
+            element={
+              <NikeProject>
+                <Bag />
               </NikeProject>
             }
           />

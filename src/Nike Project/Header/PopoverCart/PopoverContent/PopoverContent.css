@@ -1,5 +1,14 @@
 .popover-content {
-    width: 350px;
+    width: 400px;
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    padding: 10px 0;
+
+    overflow: auto;
 }
 
 .popover-content .box-content .box-img-popover {
@@ -8,13 +17,14 @@
     border-radius: 20px;
 }
 
-.box-img-popover img {
+.box-img-popover .img-popover {
     height: 100px;
     width: 100% !important;
 }
 
 .popover-content .box-content {
     display: flex;
+    align-items: center;
 
     padding: 10px 0;
 
@@ -51,7 +61,7 @@
 }
 
 .view-bag, .check-out {
-    width: 48%;
+    width: 100%;
     background-color: black;
     color: white;
 

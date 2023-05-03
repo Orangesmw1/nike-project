@@ -1,0 +1,174 @@
+.box-bag .container {
+    display: flex;
+    justify-content: center;
+
+    padding-top: 50px;
+}
+
+.box-items-bag {
+    width: 50%;
+}
+
+.box-items-bag h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+
+.box-items-bag ul {
+    padding: 15px 0;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.box-items-bag ul li {
+    display: inline-block;
+
+}
+
+.box-img-bag {
+    width: 25% !important;
+    height: 150px;
+    background-color: rgb(239, 236, 236);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+    margin-bottom: 10px;
+
+    
+}
+
+.box-items-bag ul {
+    border-bottom: 1px solid gainsboro;
+}
+
+.box-items-bag ul li .img-item-bag {
+    width: 100%;
+    
+}
+
+.box-content-item-bag {
+    width: 40%;
+   
+}
+
+.box-content-item-bag h4 {
+    font-size: 1.1rem;
+}
+
+.box-content-item-bag p {
+    padding-bottom: 5px;
+    color: grey;
+}
+
+.size-quantity {
+    display: flex;
+    justify-content: space-between;
+}
+
+.size-item-bag, .quantity-item-bag {
+    color: grey;
+    font-size: 1.1rem;
+
+    padding: 10px 0;
+}
+
+.box-favourite-delete i {
+    font-size: 1.2rem;
+    padding-top: 10px;
+    padding-right: 20px;
+    color: black;
+}
+
+.price-item-bag {
+    text-align: right;
+    margin-left: 80px;
+    font-size: 1.2rem;
+}
+
+.box-sum  {
+    padding-left: 20px;
+    width: 25%;
+}
+
+.box-sum h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+
+.box-sum p {
+    font-size: 1rem;
+    font-weight: 600;
+
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.box-sum .price-total {
+    font-size: 1.2rem !important;
+    font-weight: 400;
+}
+
+.sub-total {
+    padding-bottom: 5px !important;
+}
+
+.delivery-handing {
+    padding-top: 5px !important;
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid gainsboro;
+}
+
+.total {
+    padding: 20px 0;
+    border-bottom: 1px solid gainsboro;
+
+}
+
+.box-bag-checkout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.guest-checkout , .member-checkout {
+    width: 100%;
+    padding: 15px 0;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+
+    margin-top: 30px;
+}
+
+.member-checkout {
+    margin-top: 10px !important;
+}
+
+.favourite-login {
+    padding: 15px 0;
+    border-top: 1px solid gainsboro;
+}
+
+.favourite-login h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+
+}
+
+.favourite-login a {
+    text-decoration: underline;
+}

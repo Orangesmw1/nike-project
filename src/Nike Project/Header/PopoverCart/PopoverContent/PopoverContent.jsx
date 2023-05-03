@@ -1,9 +1,12 @@
 import React from "react";
 import "./PopoverContent.css";
 import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 
-const PopoverContent = () => {
+const PopoverContent = (props) => {
   const listCart = useSelector((state) => state.counter.listShowCart);
+
+  const { hide } = props;
 
   return (
     <div className="popover-content">
@@ -11,23 +14,33 @@ const PopoverContent = () => {
         return (
           <div className="box-content" key={item.id}>
             <div className="box-img-popover">
-              <img
-                src="	https://shop.cyberlearn.vn/images/adidas-prophere.png"
-                alt=""
-              />
+              <img className="img-popover" src={item.image} alt="" />
             </div>
             <ul>
-              <li>Name</li>
-              <li>Size EU 45</li>
-              <li>20000$</li>
+              <li>{item.name}</li>
+              <li>Size EU {item.sizeDetail}</li>
+              <li>Quantity: {item.count}</li>
+              <li>{item.price * item.count}$</li>
             </ul>
           </div>
         );
       })}
 
       <div className="box-viewbag-checkout">
-        <button className="view-bag">View Bags (1)</button>
-        <button className="check-out">Check out</button>
+        <NavLink
+          to={"/bag"}
+          style={{ width: "48%" }}
+          onClick={() => hide(false)}
+        >
+          <button className="view-bag">View Bags ({listCart.length}) </button>
+        </NavLink>
+        <NavLink
+          to={"/bag"}
+          style={{ width: "48%" }}
+          onClick={() => hide(false)}
+        >
+          <button className="check-out">Check out</button>
+        </NavLink>
       </div>
     </div>
   );
