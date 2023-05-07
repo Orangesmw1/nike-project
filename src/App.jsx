@@ -4,6 +4,8 @@ import NikeProject from "./Nike Project/NikeProject";
 import HomePage from "./Nike Project/HomePage/HomePage";
 import Detail from "./Nike Project/Detail/Detail";
 import Bag from "./Nike Project/Bag/Bag";
+import Login from "./Nike Project/Login/Login";
+import Register from "./Nike Project/Register/Register";
 
 function App() {
   return (
@@ -33,6 +35,24 @@ function App() {
             element={
               <NikeProject>
                 <Bag />
+              </NikeProject>
+            }
+          />
+
+          <Route
+            path="/login"
+            element={
+              <NikeProject>
+                <Login />
+              </NikeProject>
+            }
+          />
+
+          <Route
+            path="/register"
+            element={
+              <NikeProject>
+                <Register />
               </NikeProject>
             }
           />

@@ -21,7 +21,6 @@ export const counterSlice = createSlice({
       const itemUpdate = { ...action.payload, count: 1 };
 
       if (index !== -1) {
-        console.log("trungf");
         state.listShowCart[index].count += 1;
       } else {
         state.listShowCart.push(itemUpdate);
