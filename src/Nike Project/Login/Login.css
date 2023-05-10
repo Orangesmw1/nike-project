@@ -1,0 +1,190 @@
+.login {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+  }
+
+  .header-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    padding-top: 20px;
+  }
+  
+  .header-login img {
+    width: 50px;
+    height: 40px;
+  
+  }
+  
+  .header-login h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    text-align: center;
+    line-height: 1;
+    letter-spacing: 0.2;
+  }
+  
+  .header-login h6 {
+    padding-top: 20px;
+  
+    width: 340px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: grey;
+  }
+
+  .login p {
+    color: #bf1650;
+  }
+
+  .login p::before {
+    display: inline;
+    content: "⚠ ";
+  }
+  
+  .login input , .register select {
+    display: block;
+    box-sizing: border-box;
+    width: 324px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #e5e5e5;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #8d8d8d !important;
+  }
+
+  .login input {
+    margin-top: 10px !important;
+  }
+
+  .login input::placeholder {
+    color: #8d8d8d !important;
+    font-size: 1rem !important;
+  }
+
+  .login form {
+    max-width: 500px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  .login .check-box {
+    width: 324px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .login .checkbox-login {
+    width: 50%;
+    display: flex;
+  }
+
+  .login .check-box a {
+    width: 50%;
+
+    padding-top: 18px;
+    text-align: right;
+    font-size: 0.8rem;
+
+    color: #8d8d8d;
+
+  }
+
+  .login .check-box input {
+    width: 10%;
+  }
+
+  .login .check-box label {
+    padding: 0 10px !important;
+    padding-top: 20px !important;
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.2;
+
+    color: #5a5959;
+
+  }
+
+  .login .termp {
+    width: 324px;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #8d8d8d;
+  }
+
+  .login .termp a {
+    padding-left: 2px;
+    text-decoration: underline;
+  }
+
+  .login .join-us {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #8d8d8d;
+
+    margin-top: 10px;
+
+  }
+
+  .login .join-us h6 {
+    display: inline-block;
+
+    padding-left: 3px;
+    text-decoration: underline;
+    color: black !important;
+
+    font-weight: 500;
+  }
+
+
+.login button[type="submit"],
+  .login input[type="submit"] {
+    color: white !important;
+    text-transform: uppercase;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    
+    margin-top: 30px !important;
+
+    background-color: #000;
+    border: 1px solid #000;
+  }
+  
+  .login button[type="submit"]:hover,
+  .login input[type="submit"]:hover {
+    background: black;
+  }
+
+  .login button[type="submit"]:active,
+  .login input[type="button"]:active,
+  .login input[type="submit"]:active {
+    transition: 0.3s all;
+    transform: translateY(3px);
+    border: 1px solid black;
+    opacity: 0.8;
+  }
+
+  .login input[type="button"]:hover {
+    transition: 0.3s all;
+  }
+  
+  .login button[type="submit"],
+ .login input[type="button"],
+ .login input[type="submit"] {
+    -webkit-appearance: none;
+  }
