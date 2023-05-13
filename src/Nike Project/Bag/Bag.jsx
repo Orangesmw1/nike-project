@@ -3,6 +3,7 @@ import ShowItems from "../HomePage/ShowItems/ShowItems";
 import "./Bag.css";
 import { useDispatch, useSelector } from "react-redux";
 import { delItemCart } from "../Redux/couterSlice";
+import { NavLink } from "react-router-dom";
 
 const Bag = () => {
   const listCart = useSelector((state) => state.counter.listShowCart);
@@ -65,13 +66,13 @@ const Bag = () => {
               <h4>Favourite</h4>
               <p>
                 Want to view your favourites?
-                <a href="#" className="px-2">
+                <NavLink to={"/register"} className="px-2">
                   Join us
-                </a>
+                </NavLink>
                 or
-                <a className="pl-2" href="#">
+                <NavLink to={"/login"} className="pl-2">
                   Sign in
-                </a>
+                </NavLink>
               </p>
             </div>
           </div>
