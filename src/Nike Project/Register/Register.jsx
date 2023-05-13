@@ -3,14 +3,26 @@ import { useForm } from "react-hook-form";
 import "./Register.css";
 import logo from "../../assist/image/logo.png";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 
 const Register = () => {
-  const ref = useRef();
-
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    console.log("data", data);
+    axios({
+      method: "post",
+      url: "https://637b5d216f4024eac20b7454.mockapi.io/user-nike",
+      data: {
+        email: data.emailAddress,
+        password: data.password,
+        fistname: data.fistname,
+        lastName: data.lastName,
+        birth: data.dateBirth,
+        country: data.country,
+        gender: data.gender,
+        checkbox: data.checkbox,
+      },
+    });
   };
 
   return (
@@ -28,6 +40,14 @@ const Register = () => {
           placeholder="Email address"
           type="email"
           {...register("emailAddress", {
+            required: true,
+          })}
+        />
+
+        <input
+          placeholder="Password"
+          type="password"
+          {...register("password", {
             required: true,
           })}
         />
@@ -57,7 +77,9 @@ const Register = () => {
           type="date"
         />
 
-        <h6>Get a Nike Member Reward every year on your Birthday.</h6>
+        <h6 className="get-a-member">
+          Get a Nike Member Reward every year on your Birthday.
+        </h6>
 
         <select {...register("country")}>
           <optgroup label="Country/Region">
@@ -67,14 +89,14 @@ const Register = () => {
           </optgroup>
         </select>
 
-        <ul className="gender" {...register("gender")}>
-          <input type="button" value="male" id="input-male" />
+        <div className="gender" {...register("gender")}>
+          <input type="button" value="Male" id="input-male" />
 
-          <input type="button" value="female" id="input-femate" />
-        </ul>
+          <input type="button" value="Female" id="input-femate" />
+        </div>
 
-        {/* <div className="check-box">
-          <input type="checkbox" />
+        <div className="check-box">
+          <input type="checkbox" {...register("checkbox")} />
           <label>
             Sign up for emails to get updates from Nike on products, offers and
             your Member benefits
@@ -87,7 +109,7 @@ const Register = () => {
           <br />
           and
           <a href="">Terms of Use</a>.
-        </div> */}
+        </div>
 
         <input type="submit" value="join us" />
       </form>

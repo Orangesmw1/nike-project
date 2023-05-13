@@ -1,0 +1,17 @@
+.poper-ava-content ul li:first-child {
+    padding-top: 0 !important;
+
+    border-bottom: 1px solid grey;
+}
+
+.poper-ava-content ul li {
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.poper-ava-content ul li:hover {
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+}
+

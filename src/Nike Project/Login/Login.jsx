@@ -1,13 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import logo from "../../assist/image/logo.png";
 
 import "./Login.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { userLogin } from "../Redux/userSlice";
+import { Alert } from "antd";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const listUser = useSelector((state) => state.user.listUser);
+
+  const navigate = useNavigate();
+  const distpatch = useDispatch();
+
+  useEffect(() => {
+    if (localStorage.getItem("userLogin")) {
+      navigate("/");
+    }
+  }, []);
+
+  const onSubmit = (data) => {
+    listUser?.forEach((dataUserRegister) => {
+      if (dataUserRegister.email === data.email) {
+        if (dataUserRegister.password === data.password) {
+          distpatch(userLogin(dataUserRegister));
+
+          localStorage.setItem("userLogin", JSON.stringify(dataUserRegister));
+
+          navigate("/");
+        }
+      }
+    });
+  };
 
   return (
     <div className="login">
@@ -26,7 +52,7 @@ const Login = () => {
             <input type="checkbox" />
             <label>Keep me signed in</label>
           </div>
-          <a href="">Forgotten your password?</a>
+          <a href="">Forgot your password?</a>
         </div>
 
         <div className="termp">

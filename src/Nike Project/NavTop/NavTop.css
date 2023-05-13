@@ -10,6 +10,11 @@
     height: 20px;
 }
 
+.userAccount ul {
+    display: flex;
+    align-items: center;
+}
+
 .userAccount ul li {
     list-style: none;
 

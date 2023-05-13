@@ -4,8 +4,9 @@ import NavTop from "./NavTop/NavTop";
 import ShopCarousel from "./ShopCarousel/ShopCarousel";
 import Footer from "./Footer/Footer";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { callApi } from "./Redux/couterSlice";
+import { callApiUser } from "./Redux/userSlice";
 
 const NikeProject = ({ children }) => {
   const dispatch = useDispatch();
@@ -17,6 +18,17 @@ const NikeProject = ({ children }) => {
     }).then((response) => {
       if (response) {
         dispatch(callApi(response.data.content));
+      }
+    });
+
+    axios({
+      method: "get",
+      url: "https://637b5d216f4024eac20b7454.mockapi.io/user-nike",
+    }).then((response) => {
+      if (response) {
+        console.log("response", response.data);
+
+        dispatch(callApiUser(response.data));
       }
     });
   }, []);

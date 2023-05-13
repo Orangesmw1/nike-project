@@ -56,7 +56,7 @@
     align-items: center;
   }
 
-  .register .date-of-birth h6 {
+  .register  .get-a-member {
     width: 320px;
     text-align: center;
     font-size: 0.75rem;
@@ -167,27 +167,11 @@
 
   }
 
-  .register .gender li {
-    width: 155px;
+  
 
-    position: relative;
-  }
+  .register .gender input {
+    width: 48%;
 
-  .register .gender li label{
-    position: absolute;
-    bottom: 2px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    font-size: 1rem;
-    font-weight: 400;
-    color: #8d8d8d;
-
-    pointer-events: none;
-  }
-
-  .register .gender li input {
-    width: 100%;
   }
 
 
