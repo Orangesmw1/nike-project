@@ -5,35 +5,41 @@ import logo from "../../assist/image/logo.png";
 import "./Login.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { userLogin } from "../Redux/userSlice";
+import { callApiUser, userLogin } from "../Redux/userSlice";
 import { Alert } from "antd";
 import { ToastContainer, toast } from "react-toastify";
+import axios from "axios";
 
 const Login = () => {
-  const { register, handleSubmit } = useForm();
-  const listUser = useSelector((state) => state.user.listUser);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   const navigate = useNavigate();
-  const distpatch = useDispatch();
+  const dispatch = useDispatch();
 
   useEffect(() => {
+    axios({
+      method: "get",
+      url: "https://637b5d216f4024eac20b7454.mockapi.io/user-nike",
+    }).then((response) => {
+      if (response) {
+        dispatch(callApiUser(response.data));
+      }
+    });
+
     if (localStorage.getItem("userLogin")) {
       navigate("/");
     }
   }, []);
 
   const onSubmit = (data) => {
-    listUser?.forEach((dataUserRegister) => {
-      if (dataUserRegister.email === data.email) {
-        if (dataUserRegister.password === data.password) {
-          distpatch(userLogin(dataUserRegister));
+    dispatch(userLogin(data));
+    const localRegister = JSON.parse(localStorage.getItem("userRegister"));
 
-          localStorage.setItem("userLogin", JSON.stringify(dataUserRegister));
-        }
-      }
-    });
-
-    if (localStorage.getItem("userLogin")) {
+    if (data.email === localRegister.emailAddress) {
       const id = toast.loading("Please wait...");
 
       setTimeout(() => {
@@ -60,16 +66,42 @@ const Login = () => {
         </h2>
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input {...register("email")} placeholder="Email address" />
-        <input {...register("password")} placeholder="Password" />
+        <input
+          {...register("email", {
+            required: true,
+          })}
+          placeholder="Email address"
+        />
+        {errors.email?.type === "required" && (
+          <p role="alert">Email address is required</p>
+        )}
+
+        <input
+          {...register("password", {
+            required: true,
+          })}
+          placeholder="Password"
+        />
+        {errors.password?.type === "required" && (
+          <p role="alert">Password is required</p>
+        )}
 
         <div className="check-box">
           <div className="checkbox-login">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              {...register("checkbox", {
+                required: true,
+              })}
+            />
             <label>Keep me signed in</label>
           </div>
           <a href="">Forgot your password?</a>
         </div>
+
+        {errors.checkbox?.type === "required" && (
+          <p role="alert">Checkbox is required</p>
+        )}
 
         <div className="termp">
           By logging in, you agree to Nike's

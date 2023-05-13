@@ -5,8 +5,6 @@ import PoperverAvaContent from "./PoperverAvaContent/PoperverAvaContent";
 const PoperverAva = () => {
   const localUser = JSON.parse(localStorage.getItem("userLogin"));
 
-  console.log("localUser", localUser);
-
   const [open, setOpen] = useState(false);
 
   const hide = () => {
@@ -26,7 +24,7 @@ const PoperverAva = () => {
       onOpenChange={handleOpenChange}
     >
       <p style={{ fontSize: "0.8rem", display: "inline-block" }}>
-        Hi {localUser.lastname}
+        Hi {localUser?.lastname}
       </p>
       <i className="fa fa-user pl-2" style={{ fontSize: "1rem" }}></i>
     </Popover>

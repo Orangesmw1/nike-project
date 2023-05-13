@@ -34,7 +34,20 @@ export const userSlice = createSlice({
     },
 
     userLogin: (state, action) => {
-      state.dataUserLogin = action.payload;
+      let index = state.listUser.findIndex(
+        (userLogin) => userLogin.email === action.payload.email
+      );
+
+      if (index !== -1) {
+        state.listUser.map((user) => {
+          if (user.email === action.payload.email) {
+            state.dataUserLogin = user;
+            localStorage.setItem("userLogin", JSON.stringify(user));
+          }
+        });
+      } else {
+        notify("error", "Email chưa đăng ký");
+      }
     },
 
     userRegister: (state, action) => {
@@ -45,6 +58,7 @@ export const userSlice = createSlice({
       if (index !== -1) {
         notify("error", "Email already exists");
       } else {
+        localStorage.setItem("userRegister", JSON.stringify(action.payload));
         axios({
           method: "post",
           url: "https://637b5d216f4024eac20b7454.mockapi.io/user-nike",
@@ -52,7 +66,7 @@ export const userSlice = createSlice({
             email: action.payload.emailAddress,
             password: action.payload.password,
             fistname: action.payload.fistname,
-            lastName: action.payload.lastName,
+            lastname: action.payload.lastName,
             birth: action.payload.dateBirth,
             country: action.payload.country,
             gender: action.payload.gender,
