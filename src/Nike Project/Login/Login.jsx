@@ -19,6 +19,7 @@ const Login = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const listUser = useSelector((state) => state.user.listUser);
 
   useEffect(() => {
     axios({
@@ -36,24 +37,30 @@ const Login = () => {
   }, []);
 
   const onSubmit = (data) => {
+    console.log("data", data);
+
     dispatch(userLogin(data));
-    const localRegister = JSON.parse(localStorage.getItem("userRegister"));
+    const localUserLogin = JSON.parse(localStorage.getItem("userLogin"));
 
-    if (data.email === localRegister.emailAddress) {
-      const id = toast.loading("Please wait...");
+    let index = listUser.findIndex((user) => user.email === data.email);
 
-      setTimeout(() => {
-        toast.update(id, {
-          render: "Logged in successfully",
-          type: "success",
-          isLoading: false,
-          position: "top-right",
-        });
+    if (index !== -1) {
+      if (localUserLogin) {
+        const id = toast.loading("Please wait...");
 
         setTimeout(() => {
-          navigate("/");
-        }, 1000);
-      }, 2000);
+          toast.update(id, {
+            render: "Logged in successfully",
+            type: "success",
+            isLoading: false,
+            position: "top-right",
+          });
+
+          setTimeout(() => {
+            navigate("/");
+          }, 1000);
+        }, 2000);
+      }
     }
   };
 
