@@ -87,6 +87,7 @@ const Login = () => {
           {...register("password", {
             required: true,
           })}
+          type="password"
           placeholder="Password"
         />
         {errors.password?.type === "required" && (
