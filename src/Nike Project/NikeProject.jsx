@@ -26,8 +26,6 @@ const NikeProject = ({ children }) => {
       url: "https://637b5d216f4024eac20b7454.mockapi.io/user-nike",
     }).then((response) => {
       if (response) {
-        console.log("response", response.data);
-
         dispatch(callApiUser(response.data));
       }
     });

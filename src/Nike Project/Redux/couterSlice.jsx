@@ -1,8 +1,20 @@
 import { createSlice, current } from "@reduxjs/toolkit";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const initialState = {
   listProduct: [],
   listShowCart: [],
+};
+
+const notify = (key) => {
+  switch (key) {
+    case "success":
+      toast.success("Success Notification !", {
+        position: toast.POSITION.TOP_LEFT,
+      });
+      break;
+  }
 };
 
 export const counterSlice = createSlice({
@@ -23,6 +35,8 @@ export const counterSlice = createSlice({
       if (index !== -1) {
         state.listShowCart[index].count += 1;
       } else {
+        notify("success");
+
         state.listShowCart.push(itemUpdate);
       }
     },

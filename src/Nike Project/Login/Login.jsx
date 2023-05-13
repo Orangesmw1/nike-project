@@ -7,6 +7,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogin } from "../Redux/userSlice";
 import { Alert } from "antd";
+import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
@@ -28,11 +29,26 @@ const Login = () => {
           distpatch(userLogin(dataUserRegister));
 
           localStorage.setItem("userLogin", JSON.stringify(dataUserRegister));
-
-          navigate("/");
         }
       }
     });
+
+    if (localStorage.getItem("userLogin")) {
+      const id = toast.loading("Please wait...");
+
+      setTimeout(() => {
+        toast.update(id, {
+          render: "Logged in successfully",
+          type: "success",
+          isLoading: false,
+          position: "top-right",
+        });
+
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
+      }, 2000);
+    }
   };
 
   return (
@@ -72,6 +88,7 @@ const Login = () => {
           </h6>
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 };

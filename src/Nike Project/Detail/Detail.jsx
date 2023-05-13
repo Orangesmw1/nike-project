@@ -4,7 +4,8 @@ import { NavLink, useParams } from "react-router-dom";
 import ShowItems from "../HomePage/ShowItems/ShowItems";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { upArrShowCart } from "../Redux/couterSlice";
+import { notify, upArrShowCart } from "../Redux/couterSlice";
+import { ToastContainer } from "react-toastify";
 
 const Detail = () => {
   const param = useParams();
@@ -103,6 +104,7 @@ const Detail = () => {
         </div>
       ) : null}
       <ShowItems />
+      <ToastContainer />
     </div>
   );
 };
